@@ -13,7 +13,7 @@ namespace Projeto_Entrega_1
         {
             Conta conta1 = new Conta(100.00, 123, 456, "carlos");
 
-            conta1.getSaldo();
+            Console.WriteLine(conta1.getSaldo());
         }
     }
 }

@@ -8,10 +8,10 @@ namespace Projeto_Entrega_1.Entraga_1
 {
     class Conta
     {
-        private double Saldo { get { return Saldo; } set { }}
-        private int NumeroAgencia { get; set; }
-        private int NumeroConta { get; set; }
-        private string NomeTitular { get; set; }
+        private double Saldo;
+        private int NumeroAgencia;
+        private int NumeroConta;
+        private string NomeTitular;
 
         public double getSaldo() { return Saldo;}
         public int getNumeroAgenci() { return NumeroAgencia; }
