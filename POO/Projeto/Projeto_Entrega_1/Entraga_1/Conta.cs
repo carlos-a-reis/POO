@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,18 +13,27 @@ namespace Projeto_Entrega_1.Entraga_1
         private int NumeroConta;
         private string NomeTitular;
 
-        public double getSaldo() { return Saldo;}
-        public int getNumeroAgenci() { return NumeroAgencia; }
-        public double getNumeroConta() { return NumeroConta; }
-        public string getNomeTitular() { return NomeTitular; }
-
+        public double GetSaldo() { return Math.Round(Saldo, 2);}
+        public int GetNumeroAgencia() { return NumeroAgencia; }
+        public int GetNumeroConta() { return NumeroConta; }
+        public string GetNomeTitular() { return NomeTitular; }
 
         public Conta(double saldo, int numeroAgencia, int numeroConta, string nomeTitular)
         {
-            Saldo = saldo;
+            Saldo = Math.Round(saldo, 2);
             NumeroAgencia = numeroAgencia;
             NumeroConta = numeroConta;
             NomeTitular = nomeTitular;
         }
+
+        public void Depositar(double valor)
+        {
+            double saldoAnterior = Saldo;
+            Saldo = Saldo + valor;
+
+            Console.WriteLine($"O saldo anterior era de R$ {saldoAnterior:F2}");
+            Console.WriteLine($"O saldo atual é de R$ {Saldo:F2}");
+        }
     }
 }
+
