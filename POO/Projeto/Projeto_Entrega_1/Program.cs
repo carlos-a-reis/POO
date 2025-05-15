@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +11,11 @@ namespace Projeto_Entrega_1
     {
         static void Main(string[] args)
         {
-            Conta conta1 = new Conta(100.00, 123, 456, "carlos");
+            Conta conta1 = new Conta(100.171, 123, 456, "carlos");
 
-            Console.WriteLine(conta1.getSaldo());
+            Console.WriteLine(conta1.GetSaldo());
+            conta1.Depositar(50.00);
+            Console.WriteLine(conta1.GetSaldo());
         }
     }
 }
