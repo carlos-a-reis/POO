@@ -11,11 +11,10 @@ namespace Projeto_Entrega_1
     {
         static void Main(string[] args)
         {
-            Conta conta1 = new Conta(100, 123, 456, "carlos");
+            Banco bancoUVV = new Banco("UVV Bank", 157);
+            Conta contaNova = bancoUVV.AbrirConta("451", "000014-2", "Carlos Augusto", 100);
 
-            Console.WriteLine(conta1.GetSaldo());
-            conta1.Depositar(60.00);
-            Console.WriteLine(conta1.GetSaldo());
+            contaNova.InfoConta();
         }
     }
 }
