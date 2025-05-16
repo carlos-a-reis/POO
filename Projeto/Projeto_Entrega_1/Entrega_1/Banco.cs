@@ -24,7 +24,7 @@ namespace Projeto_Entrega_1.Entrega_1
             Console.WriteLine("\n--- Banco Criado ---");
             Console.WriteLine($"Nome: {Nome}");
             Console.WriteLine($"Código: {Codigo}");
-            Console.WriteLine("\n--------------------");
+            Console.WriteLine("--------------------");
 
         }
 

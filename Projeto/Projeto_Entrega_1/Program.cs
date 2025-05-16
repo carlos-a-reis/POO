@@ -18,8 +18,6 @@ namespace Projeto_Entrega_1
             contaNova.Sacar(100);
 
             bancoUVV.ListarContas();
-
-            contaNova.InfoConta();
         }
     }
 }
