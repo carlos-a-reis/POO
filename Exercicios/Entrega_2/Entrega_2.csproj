@@ -46,7 +46,9 @@
     <Compile Include="Engine_do_Unity\Engine.cs" />
     <Compile Include="Fazenda_do_Pai\Boi.cs" />
     <Compile Include="Fazenda_do_Pai\Rebanho.cs" />
+    <Compile Include="Notas_Disciplina\Nota.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Programador_Fit\Fit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
