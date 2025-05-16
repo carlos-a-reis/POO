@@ -36,6 +36,16 @@ namespace Projeto_Entrega_1.Entrega_1
                 NumeroConta = numeroConta;
                 NomeTitular = nomeTitular;
                 BancoProprietario = bancoProprietario;
+
+                Console.WriteLine("\n--- Conta Criada ---");
+                Console.WriteLine($"Número: {NumeroConta}");
+                Console.WriteLine($"Agência: {NumeroAgencia}");
+                Console.WriteLine($"Titular: {NomeTitular}");
+                Console.WriteLine($"Saldo: R$ {Saldo:F2}");
+                Console.WriteLine($"Banco: {BancoProprietario.GetNome()}");
+                Console.WriteLine($"Código: {BancoProprietario.GetCodigo()}");
+                Console.WriteLine("--------------------");
+
             }
             catch (ArgumentOutOfRangeException error)
             {
@@ -49,11 +59,15 @@ namespace Projeto_Entrega_1.Entrega_1
 
         public void InfoConta()
         {
-            Console.WriteLine($"\nAgência: {NumeroAgencia}");
+            Console.WriteLine("\n--- Informações da Conta ---");
             Console.WriteLine($"Número: {NumeroConta}");
-            Console.WriteLine($"Titual: {NomeTitular}");
+            Console.WriteLine($"Agência: {NumeroAgencia}");
+            Console.WriteLine($"Titular: {NomeTitular}");
             Console.WriteLine($"Saldo: R$ {Saldo:F2}");
-            BancoProprietario.InfoBanco();
+            Console.WriteLine($"Banco: {BancoProprietario.GetNome()}");
+            Console.WriteLine($"Código: {BancoProprietario.GetCodigo()}");
+            Console.WriteLine("----------------------------");
+
         }
 
         public void Depositar(double valor)
@@ -61,9 +75,13 @@ namespace Projeto_Entrega_1.Entrega_1
             double saldoAnterior = Saldo;
             Saldo = Saldo + valor;
 
-            Console.WriteLine($"O saldo anterior era de R$ {saldoAnterior:F2}");
-            Console.WriteLine($"O valor do deposito foi de R$ {valor:F2}");
-            Console.WriteLine($"O saldo atual é de R$ {Saldo:F2}");
+            Console.WriteLine("\n--- Depósito Realizado ---");
+            Console.WriteLine($"Conta: {NumeroAgencia}-{NumeroConta}");
+            Console.WriteLine($"Saldo Anterior: R$ {saldoAnterior:F2}");
+            Console.WriteLine($"Valor Depositado: R$ {valor:F2}");
+            Console.WriteLine($"Saldo Atual: R$ {Saldo:F2}");
+            Console.WriteLine("--------------------------");
+
         }
 
         public void Sacar(double valor)
@@ -75,9 +93,12 @@ namespace Projeto_Entrega_1.Entrega_1
                     double saldoAnterior = Saldo;
                     Saldo = Saldo - valor;
 
-                    Console.WriteLine($"O saldo anterior era de R$ {saldoAnterior:F2}");
-                    Console.WriteLine($"O valor do saque foi de R$ {valor:F2}");
-                    Console.WriteLine($"O saldo atual é de R$ {Saldo:F2}");
+                    Console.WriteLine("\n--- Saque Realizado ---");
+                    Console.WriteLine($"Conta: {NumeroAgencia}-{NumeroConta}");
+                    Console.WriteLine($"Saldo Anterior: R$ {saldoAnterior:F2}");
+                    Console.WriteLine($"Valor Sacado: R$ {valor:F2}");
+                    Console.WriteLine($"Saldo Atual: R$ {Saldo:F2}");
+                    Console.WriteLine("-----------------------");
                 }
                 else
                 {

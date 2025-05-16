@@ -20,12 +20,21 @@ namespace Projeto_Entrega_1.Entrega_1
         {
             Nome = nome;
             Codigo = codigo;
+
+            Console.WriteLine("\n--- Banco Criado ---");
+            Console.WriteLine($"Nome: {Nome}");
+            Console.WriteLine($"Código: {Codigo}");
+            Console.WriteLine("\n--------------------");
+
         }
 
         public void InfoBanco()
         {
-            Console.WriteLine($"Banco: {Nome}");
+            Console.WriteLine("\n--- Informações do Banco ---");
+            Console.WriteLine($"Nome: {Nome}");
             Console.WriteLine($"Código: {Codigo}");
+            Console.WriteLine("----------------------------");
+
         }
 
         public Conta AbrirConta(string numeroAgencia, string numeroConta, string nomeTitular, double saldoInicial)
@@ -47,16 +56,18 @@ namespace Projeto_Entrega_1.Entrega_1
                     return conta;
                 }
             }
-            Console.WriteLine("Conta não encontrada");
+            Console.WriteLine("\nDesculpe, conta não encontrada");
             return null;
             
         }
 
-        public void ListarContas()
+        public List<Conta> ListarContas()
         {
             if (Contas.Count == 0)
             {
-                Console.WriteLine("Não há contas cadastradas");
+                Console.WriteLine("\nDesculpe, não há contas cadastradas");
+
+                return null;
             }
             else
             {
@@ -64,6 +75,8 @@ namespace Projeto_Entrega_1.Entrega_1
                 {
                     conta.InfoConta();
                 }
+
+                return Contas;
             }
         }
     }
