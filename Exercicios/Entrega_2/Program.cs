@@ -11,7 +11,7 @@ namespace Entrega_2
     {
         static void Main(string[] args)
         {
-            // Exercício Fazenda do Pai
+            // Exercício Fazenda do Pai 
             Console.WriteLine("Rebanho da Fazenda da Pai");
             Console.WriteLine("-------------------------");
 
@@ -44,8 +44,14 @@ namespace Entrega_2
                     Console.WriteLine("Valor inválido. Digite um número para o peso do boi.");
                 }
             }
+            if (rebanho.PesoMedio() > 0)
+            {
+                rebanho.InfoRebanho();
+            }
 
-            rebanho.InfoRebanho();
+
+            // Exercício Engine do Unity
+
         }
     }
 }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine_do_Unity\Engine.cs" />
     <Compile Include="Fazenda_do_Pai\Boi.cs" />
     <Compile Include="Fazenda_do_Pai\Rebanho.cs" />
     <Compile Include="Program.cs" />

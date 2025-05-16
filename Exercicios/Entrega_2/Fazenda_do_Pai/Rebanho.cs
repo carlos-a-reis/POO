@@ -17,16 +17,31 @@ namespace Entrega_2.Fazenda_do_Pai
 
         public double PesoMedio()
         {
-            return bois.Average(boi => boi.GetPeso());
+            if (bois.Count == 0)
+            {
+                Console.WriteLine("Não há bois cadastrados no reanho");
+                return 0;
+            }
+             return bois.Average(boi => boi.GetPeso());   
         }
 
         public double PesoMax()
         {
+            if (bois.Count == 0)
+            {
+                Console.WriteLine("Não há bois cadastrados no reanho");
+                return 0;
+            }
             return bois.Max(boi => boi.GetPeso());
         }
 
         public double PesoMin()
         {
+            if (bois.Count == 0)
+            {
+                Console.WriteLine("Não há bois cadastrados no reanho");
+                return 0;
+            }
             return bois.Min(boi => boi.GetPeso());
         }
 
