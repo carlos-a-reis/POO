@@ -38,18 +38,32 @@ namespace Projeto_Entrega_1.Entrega_1
 
         public Conta BuscarConta(string agencia, string numeroConta)
         {
-            Conta conta = Contas.FirstOrDefault(c => c.GetNumeroAgencia() == agencia && c.GetNumeroConta() == numeroConta);
+            foreach (var conta in Contas)
+            {
+                if (conta.GetNumeroAgencia() == agencia && conta.GetNumeroConta() == numeroConta)
+                {
+                    conta.InfoConta();
 
-            conta.InfoConta();
-
-            return conta;
+                    return conta;
+                }
+            }
+            Console.WriteLine("Conta não encontrada");
+            return null;
+            
         }
 
         public void ListarContas()
         {
-            foreach(var conta in Contas)
+            if (Contas.Count == 0)
             {
-                conta.InfoConta();
+                Console.WriteLine("Não há contas cadastradas");
+            }
+            else
+            {
+                foreach (var conta in Contas)
+                {
+                    conta.InfoConta();
+                }
             }
         }
     }

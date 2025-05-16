@@ -21,16 +21,35 @@ namespace Projeto_Entrega_1.Entrega_1
 
         public Conta(double saldo, string numeroAgencia, string numeroConta, string nomeTitular, Banco bancoProprietario)
         {
-            Saldo = Math.Round(saldo, 2);
-            NumeroAgencia = numeroAgencia;
-            NumeroConta = numeroConta;
-            NomeTitular = nomeTitular;
-            BancoProprietario = bancoProprietario;
+            try
+            {
+                if(saldo > 0)
+                {
+                    Saldo = Math.Round(saldo, 2);
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(nameof(Saldo), "O saldo inicial deve ser maior que R$ 0.00");
+                }
+
+                NumeroAgencia = numeroAgencia;
+                NumeroConta = numeroConta;
+                NomeTitular = nomeTitular;
+                BancoProprietario = bancoProprietario;
+            }
+            catch (ArgumentOutOfRangeException error)
+            {
+                Console.WriteLine($"\nOcorreu um erro ao criar a nova conta: {error.Message}");
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine($"\nErro inespera ao criar nova conta: {error.Message}");
+            }
         }
 
         public void InfoConta()
         {
-            Console.WriteLine($"Agência: {NumeroAgencia}");
+            Console.WriteLine($"\nAgência: {NumeroAgencia}");
             Console.WriteLine($"Número: {NumeroConta}");
             Console.WriteLine($"Titual: {NomeTitular}");
             Console.WriteLine($"Saldo: R$ {Saldo:F2}");
@@ -49,19 +68,27 @@ namespace Projeto_Entrega_1.Entrega_1
 
         public void Sacar(double valor)
         {
-            if (Saldo >= valor)
+            try
             {
-                double saldoAnterior = Saldo;
-                Saldo = Saldo - valor;
+                if (Saldo >= valor)
+                {
+                    double saldoAnterior = Saldo;
+                    Saldo = Saldo - valor;
 
-                Console.WriteLine($"O saldo anterior era de R$ {saldoAnterior:F2}");
-                Console.WriteLine($"O valor do saque foi de R$ {valor:F2}");
-                Console.WriteLine($"O saldo atual é de R$ {Saldo:F2}");
+                    Console.WriteLine($"O saldo anterior era de R$ {saldoAnterior:F2}");
+                    Console.WriteLine($"O valor do saque foi de R$ {valor:F2}");
+                    Console.WriteLine($"O saldo atual é de R$ {Saldo:F2}");
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(nameof(Saldo), "O valor do saque não pode ser maior que o saldo da conta");
+                }
             }
-            else
+            catch (ArgumentOutOfRangeException error)
             {
-                Console.WriteLine("Saldo insuficiente para saque");
+                Console.WriteLine($"\nOcorreu um erro ao realizar o saque: {error.Message}");
             }
+            
         }
     }
 }
